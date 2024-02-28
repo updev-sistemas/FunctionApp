@@ -31,7 +31,7 @@ public class ListPersonWithGraphQL(ILoggerFactory loggerFactory)
 
         var result = await schema.ExecuteRequestAsync(req.Body, _logger,
             services => services.AddSingleton<IMongoCollection<PersonBson>>(
-                new MongoClient("mongodb://person-sa:Ok96cD3mSglg9C6LAugffChNOfKky5X16YzXCuaclTyMrMlEnT3GTtPyr8tq5MGXEswpTgTq8cdDACDb5nbBpQ==@person-sa.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@person-sa@")
+                new MongoClient("")
                     .GetDatabase("person-sa")
                     .GetCollection<PersonBson>("people")),
             context,
